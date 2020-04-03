@@ -12,10 +12,10 @@
 
 #include "lemin.h"
 
-int					get_path_len(t_node *path)
+int			get_path_len(t_node *path)
 {
-	t_node			*node;
-	int				i;
+	t_node		*node;
+	int			i;
 
 	node = path;
 	i = 1;
@@ -27,7 +27,7 @@ int					get_path_len(t_node *path)
 	return (i);
 }
 
-static int		find_valid_children(t_lemin *data, int path)
+static int	find_valid_children(t_lemin *data, int path)
 {
 	t_nodelist	*links;
 	t_nodelist	*tmp;
@@ -46,12 +46,12 @@ static int		find_valid_children(t_lemin *data, int path)
 		}
 		tmp = data->scan_infos.current;
 		data->scan_infos.current = data->scan_infos.current->next;
-		free(tmp);		
+		free(tmp);
 	}
 	return (SUCCESS);
 }
 
-static int		find_new_path(t_lemin *data, int path)
+static int	find_new_path(t_lemin *data, int path)
 {
 	t_nodelist	*new;
 

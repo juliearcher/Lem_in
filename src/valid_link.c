@@ -12,8 +12,8 @@
 
 #include "lemin.h"
 
-static int		valid_already_in_path(t_lemin *data, t_node *parent,
-					t_node *child, int path)
+static int	valid_already_in_path(t_lemin *data, t_node *parent,
+				t_node *child, int path)
 {
 	t_nodelist	*parent_data;
 	t_nodelist	*child_data;
@@ -33,14 +33,15 @@ static int		valid_already_in_path(t_lemin *data, t_node *parent,
 	}
 	if (parent_data != NULL && parent_data->node != NULL)
 	{
-		if (parent == data->start && (child_data == NULL || child_data->node == NULL))
+		if (parent == data->start && (child_data == NULL ||
+				child_data->node == NULL))
 			return (1);
 		return (0);
 	}
 	return (1);
 }
 
-int		valid_link(t_lemin *data, t_node *parent, t_node *child, int path)
+int			valid_link(t_lemin *data, t_node *parent, t_node *child, int path)
 {
 	if (child->last_visited == path ||
 		child == data->start || parent == data->end)

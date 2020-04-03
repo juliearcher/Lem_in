@@ -12,7 +12,8 @@
 
 #include "lemin.h"
 
-int 			update_child(t_lemin *data, t_node *parent, t_node *child, int path)
+int			update_child(t_lemin *data, t_node *parent,
+				t_node *child, int path)
 {
 	t_nodelist	*new;
 

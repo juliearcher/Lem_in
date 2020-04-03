@@ -21,7 +21,8 @@ static int	get_path_depth(t_node *path)
 	tmp = path;
 	while (tmp != NULL && tmp->parent != NULL)
 	{
-		value += tmp->hop_list != NULL && tmp->hop_list->node == tmp->parent ? -1 : 1;
+		value += tmp->hop_list != NULL &&
+			tmp->hop_list->node == tmp->parent ? -1 : 1;
 		tmp = tmp->parent;
 	}
 	return (value);

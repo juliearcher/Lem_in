@@ -14,7 +14,7 @@ t_path			*get_chosen_path(t_path *path_list, int path)
 	return (NULL);
 }
 
-static t_node		*get_best_path(t_lemin *data)
+static t_node	*get_best_path(t_lemin *data)
 {
 	t_nodelist		*tmp;
 	t_path			*path;
@@ -38,7 +38,7 @@ static t_node		*get_best_path(t_lemin *data)
 	return (best_path);
 }
 
-static int	determine_best_path(t_lemin *data)
+static int		determine_best_path(t_lemin *data)
 {
 	t_nodelist	*tmp;
 	t_path		*path;
@@ -59,7 +59,7 @@ static int	determine_best_path(t_lemin *data)
 	return (nb_turns);
 }
 
-int			simulate(t_lemin *data)
+int				simulate(t_lemin *data)
 {
 	t_path		*path;
 	int			ants;

@@ -48,14 +48,14 @@ typedef struct	s_input
 
 struct s_node;
 
-typedef struct		s_path
+typedef struct	s_path
 {
 	struct s_path	*next;
 	int				path;
 	int				path_len;
 	int				nb_ant;
 	int				sent;
-}					t_path;
+}				t_path;
 
 typedef struct	s_nodelist
 {
@@ -64,7 +64,7 @@ typedef struct	s_nodelist
 	struct s_node		*node;
 }				t_nodelist;
 
-typedef struct			s_node
+typedef struct	s_node
 {
 	struct s_node		*next;
 	t_nodelist			*connections;
@@ -78,14 +78,14 @@ typedef struct			s_node
 	int					already_in_path;
 	struct s_node		*parent;
 	int					value;
-}						t_node;
+}				t_node;
 
-typedef struct		s_scan
+typedef struct	s_scan
 {
 	t_nodelist		*current;
 	t_nodelist		*next_depth;
 	t_nodelist		*next_depth_end;
-}					t_scan;
+}				t_scan;
 
 typedef struct	s_lemin
 {
@@ -158,13 +158,15 @@ int				simulate(t_lemin *data);
 /*
 ** update_path.c
 */
-int 			update_child(t_lemin *data, t_node *parent, t_node *child, int path);
+int				update_child(t_lemin *data, t_node *parent,
+					t_node *child, int path);
 int				update_paths(t_lemin *data);
 int				update_path_nodes(t_lemin *data);
 
 /*
 ** valid_link.c
 */
-int				valid_link(t_lemin *data, t_node *parent, t_node *child, int path);
+int				valid_link(t_lemin *data, t_node *parent,
+					t_node *child, int path);
 
 #endif

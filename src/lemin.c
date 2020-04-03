@@ -34,7 +34,7 @@ static void	free_lemin(t_lemin *data)
 {
 	t_input		*input_tmp;
 	t_input		*input_old;
-	
+
 	free_nodes(data->anthill);
 	input_tmp = data->input;
 	while (input_tmp)

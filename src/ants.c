@@ -32,14 +32,13 @@ static int		move(t_lemin *data)
 	t_node			*node;
 	t_node			*dest;
 
-
 	while (data->scan_infos.current)
 	{
 		node = data->scan_infos.current->node;
 		dest = get_hop_node(data, node->hop_list);
 		dest->ant = node->ant;
 		if (dest != data->end && add_new_link_end(data, dest) == FAILURE)
-			return(FAILURE);
+			return (FAILURE);
 		if (data->line_start == 0)
 			ft_putchar(' ');
 		ft_printf("L%d-%s", node->ant, dest->name);
@@ -73,7 +72,7 @@ static int		first_turn(t_lemin *data, t_node *node, int nb)
 
 static int		do_first_turns(t_lemin *data, int *nb)
 {
-	t_nodelist *tmp;
+	t_nodelist	*tmp;
 	int			res;
 
 	tmp = data->start->connections;
@@ -99,7 +98,8 @@ int				start(t_lemin *data)
 	ft_bzero((&data->scan_infos), sizeof(t_scan));
 	nb = 0;
 	turn = 1;
-	while (!nb || ((data->scan_infos.current = data->scan_infos.next_depth) != NULL) || data->nb_ants != 0)
+	while (!nb || ((data->scan_infos.current =
+		data->scan_infos.next_depth) != NULL) || data->nb_ants != 0)
 	{
 		data->scan_infos.next_depth = NULL;
 		if (move(data) == FAILURE)
